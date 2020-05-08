@@ -13,6 +13,7 @@ pipeline {
             // If Maven was able to run the tests, even if some of the test
             // failed, record the test results and archive the jar file.
                always{
+                archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
                 junit "**/target/surefire-reports/*.xml"
                }
          }
