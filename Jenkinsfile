@@ -13,6 +13,7 @@ pipeline {
             // If Maven was able to run the tests, even if some of the test
             // failed, record the test results and archive the jar file.
                always{
+                bat "find . -name "TEST-*.xml" -exec touch {} \\;"
                 junit "**/target/surefire-reports/*.xml"
                }
          }
