@@ -14,7 +14,7 @@ pipeline {
             // failed, record the test results and archive the jar file.
                always{
                 //junit "**/target/surefire-reports/*.xml"
-                   archiveArtifacts artifacts: "build/libs/**/*.jar", fingerprint: true
+                  // archiveArtifacts artifacts: "build/libs/**/*.jar", fingerprint: true
                    junit "build/reports/**/*.xml"
                }
          }
